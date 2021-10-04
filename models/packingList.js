@@ -1,29 +1,9 @@
 const mongoose = require('mongoose');
 
-const falseBool = { type: Boolean, default: false };
-const reqStr = { type: String, required: true };
 
-const packingListSchema = mongoose.Schema({
-    shelter: [{
-        name: [reqStr],
-        isPacked: falseBool
-    }],
-    clothing: [{
-        name: [reqStr],
-        isPacked: falseBool
-    }],
-    kitchen: [{
-        name: [reqStr],
-        isPacked: falseBool
-    }],
-    personal: [{
-        name: [reqStr],
-        isPacked: falseBool
-    }],
-    other: [{
-        name: [reqStr],
-        isPacked: falseBool
-    }]
+const packingListItemSchema = mongoose.Schema({
+    item: String,
+    isPacked: Boolean, default: false
 }, { timestamps: true })
 
-module.exports = mongoose.model('PackingList', packingListSchema)
+module.exports = mongoose.model('PackingListItem', packingListItemSchema)
