@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const falseBool = { type: Boolean, default: false }
 
 const bucketListSchema = mongoose.Schema({
-    name: { type: String, requied: true },
+    name: { type: String, required: true },
     isFav: falseBool,
     vistied: falseBool,
     date: { type: Date, default: Date.now },
