@@ -10,4 +10,5 @@ const packingListItemSchema = mongoose.Schema({
       }
 }, { timestamps: true })
 
+
 module.exports = mongoose.model('PackingListItem', packingListItemSchema)

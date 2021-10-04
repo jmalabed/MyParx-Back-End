@@ -6,7 +6,6 @@ const bucketListController = require('./controllers/bucketList')
 const packingListItemController = require('./controllers/packingListItem')
 const packingListController = require('./controllers/packingList')
 
-
 app.use(express.json())
 app.use('/bucketList', bucketListController)
 app.use('/packingListItem', packingListItemController)
