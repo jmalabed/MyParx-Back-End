@@ -1,9 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
+const packingListSchema = mongoose.Schema({
+  name: {type: String, required: true},
+  bucketList: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'BucketList',
+  }
+}, {timestamps: true})
 
-const packingListItemSchema = mongoose.Schema({
-    item: String,
-    isPacked: Boolean, default: false
-}, { timestamps: true })
-
-module.exports = mongoose.model('PackingListItem', packingListItemSchema)
+module.exports = mongoose.model('PackingList', packingListSchema)
