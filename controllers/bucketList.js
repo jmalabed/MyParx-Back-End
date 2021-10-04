@@ -43,6 +43,14 @@ router.delete('/:id', async (req, res) => {
 })
 
 // -- update --
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedBucketItem = await BucketList.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    res.status(200).json(updatedBucketItem)
+  } catch(error) {
+    res.status(400).json({ error: error.message })
+  }
+})
 
 
 module.exports = router
