@@ -10,4 +10,5 @@ const bucketListSchema = mongoose.Schema({
     dogFriendly: falseBool
 }, { timestamps: true })
 
+
 module.exports = mongoose.model('BucketList', bucketListSchema)
