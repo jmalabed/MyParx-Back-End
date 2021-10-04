@@ -5,23 +5,23 @@ const reqStr = { type: String, required: true };
 
 const packingListSchema = mongoose.Schema({
     shelter: [{
-        name: reqStr,
+        name: [reqStr],
         isPacked: falseBool
     }],
     clothing: [{
-        name: reqStr,
+        name: [reqStr],
         isPacked: falseBool
     }],
     kitchen: [{
-        name: reqStr,
+        name: [reqStr],
         isPacked: falseBool
     }],
     personal: [{
-        name: reqStr,
+        name: [reqStr],
         isPacked: falseBool
     }],
     other: [{
-        reqStr: reqStr,
+        name: [reqStr],
         isPacked: falseBool
     }]
 }, { timestamps: true })
