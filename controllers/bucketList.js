@@ -13,7 +13,14 @@ router.get('/', async (req, res) => {
 })
 
 // -- show --
-
+router.get('/:id', async (req, res) => {
+  try {
+    const foundBucketItem = await BucketList.findById(req.params.id)
+    res.status(200).json(foundBucketItem)
+  } catch(error) {
+    res.status(400).json({ error: error.message })
+  }
+})
 
 // -- create --
 router.post('/', async (req, res) => {
