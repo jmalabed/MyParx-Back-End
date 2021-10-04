@@ -33,7 +33,14 @@ router.post('/', async (req, res) => {
 })
 
 // -- destory --
-
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedBucketItem = await BucketList.findByIdAndRemove(req.params.id)
+    res.status(200).json(deletedBucketItem)
+  } catch(error) {
+    res.status(400).json({ error: err.message })
+  }
+})
 
 // -- update --
 
