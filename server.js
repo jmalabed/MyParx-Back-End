@@ -11,15 +11,25 @@ const packingListItemController = require("./controllers/packingListItem");
 const packingListController = require("./controllers/packingList");
 
 // Cors
-const whiteList = ["http://localhost:3000"];
-
+const whitelist = ["http://localhost:3000"]
 const corsOptions = {
+<<<<<<< HEAD
   origin: (origin, callback) => {
     // if (whiteList.indexOf(origin) != -1) {
     callback(null, true);
     // }
   },
 };
+=======
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error("not allowed by CORS"))
+    }
+  }
+}
+>>>>>>> development
 
 // Middleware
 app.use(express.json());
