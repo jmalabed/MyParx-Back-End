@@ -1,15 +1,32 @@
-const express = require('express')
-const app = express()
-require('./db/db')
-const PORT = process.env.PORT || 9000
-const bucketListController = require('./controllers/bucketList')
-const packingListItemController = require('./controllers/packingListItem')
-const packingListController = require('./controllers/packingList')
+// dependencies
+const express = require("express");
+const app = express();
+require("./db/db");
+const PORT = process.env.PORT || 9000;
+const cors = require("cors");
 
-app.use(express.json())
-app.use('/bucketList', bucketListController)
-app.use('/packingListItem', packingListItemController)
-app.use('/packingList', packingListController)
+// Controllers
+const bucketListController = require("./controllers/bucketList");
+const packingListItemController = require("./controllers/packingListItem");
+const packingListController = require("./controllers/packingList");
 
+// Cors
+const whiteList = ["http://localhost:3000"];
 
-app.listen(PORT, () => console.log('listening on port', PORT))
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whiteList.indexOf(origin) != -1) {
+      callback(null, true);
+    }
+  },
+};
+
+// Middleware
+app.use(express.json());
+app.use(cors(corsOptions));
+
+app.use("/bucketList", bucketListController);
+app.use("/packingListItem", packingListItemController);
+app.use("/packingList", packingListController);
+
+app.listen(PORT, () => console.log("listening on port", PORT));
