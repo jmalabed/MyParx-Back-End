@@ -11,11 +11,13 @@ const packingListItemController = require("./controllers/packingListItem");
 const packingListController = require("./controllers/packingList");
 
 // Cors
+
 const whitelist = [
   "http://localhost:3000",
   "https://myparx.surge.sh/",
   "https://project-two-backend.herokuapp.com",
 ];
+
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
