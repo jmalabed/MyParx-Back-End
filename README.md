@@ -2,6 +2,8 @@
 
 ## Team: Alex Alves, Jared Malabed, Jess LaFrank, Michael Hamilton
 
+![Image of deplAyerz](./assets/rushmoredeplAyerz.png)
+
 ### Summary
 
 myParx is an app to help users create a Bucket List of US National Parks to visit. Additionally, users can create Packing Lists and associate them with a favorited national park. For example, if a user is going to Yosemite for 2 days, and has previously created a Packing List for a 2-day camping trip, they can associate that packing list with their favorite park. So simple! What a time save.
